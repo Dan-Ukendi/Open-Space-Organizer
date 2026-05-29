@@ -1,10 +1,10 @@
 # 🪑 OpenSpace Organiser
 
-Un outil CLI en Python pour organiser automatiquement le placement de collègues dans un open space, avec gestion des contraintes de voisinage.
+A Python CLI tool to automatically organize colleagues' seating in an open space, with neighbourhood constraint management.
 
 ---
 
-## 📁 Structure du projet
+## 📁 Project Structure
 
 ```
 openspace-organiser/
@@ -19,31 +19,31 @@ openspace-organiser/
 
 ---
 
-## ▶️ Utilisation
+## ▶️ Usage
 
 ```bash
 python main.py
 ```
 
-Le programme te guidera étape par étape via des questions interactives :
+The program will guide you step by step through interactive prompts:
 
-1. **Chemin vers le fichier** de noms des collègues
-2. **Nombre de tables** et **taille de chaque table**
-3. Possibilité d'**ajouter des personnes** manuellement
-4. Vérification automatique qu'il y a **assez de places** (sinon, ajout de tables possible)
-5. **Placement aléatoire** des collègues
-6. Consultation du nombre de places libres, de personnes et de sièges totaux
-7. Application de **contraintes** :
-   - Personne seule à une table → déplacée automatiquement
-   - Deux personnes **ne peuvent pas** être ensemble
-   - Deux personnes **doivent** être ensemble
-8. **Sauvegarde** du placement dans `seating_arrangement.txt` et affichage
+1. **Path to the file** containing colleagues' names
+2. **Number of tables** and **size of each table**
+3. Option to **add people manually**
+4. Automatic check that there are **enough seats** (option to add tables if not)
+5. **Random seating assignment** for all colleagues
+6. Display of free seats, number of people, and total seats
+7. Apply **constraints** :
+   - Person alone at a table → moved automatically
+   - Two people **cannot** sit together
+   - Two people **must** sit together
+8. **Save** the seating arrangement to `seating_arrangement.txt` and display it
 
 ---
 
-## 📄 Format du fichier de noms
+## 📄 Input File Format
 
-Le fichier d'entrée doit contenir **un nom par ligne**, par exemple :
+The input file must contain **one name per line**, for example:
 
 ```
 Alice
@@ -57,24 +57,24 @@ Diana
 ## 🧩 Architecture
 
 ### `Seat`
-Représente un siège, lié à une table. Attributs : `free` (booléen), `occupant` (nom).
+Represents a seat linked to a table. Attributes: `free` (boolean), `occupant` (name).
 
 ### `Table`
-Tableau de `Seat`. Gère l'assignation, la libération et le déplacement d'occupants.
+Array of `Seat`. Handles assigning, freeing, and moving occupants.
 
 ### `OpenSpace`
-Tableau de `Table`. Orchestre le placement aléatoire, les contraintes de voisinage et la sauvegarde.
+Array of `Table`. Orchestrates random seating, neighbourhood constraints, and file saving.
 
 ---
 
-## ⚙️ Prérequis
+## ⚙️ Requirements
 
 - Python 3.x
-- Aucune dépendance externe
+- No external dependencies
 
 ---
 
-## 📝 Exemple de sortie (`seating_arrangement.txt`)
+## 📝 Output Example (`seating_arrangement.txt`)
 
 ```
 Alice, Table 0
