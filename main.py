@@ -13,8 +13,7 @@ def main():
     8. Store the seating arrangement in a txt file and display it
     '''
     ask = True
-    while ask :
-        path = input("Enter the path to the file: ")
+    path = input("Enter the path to the file: ")
     number_of_tables = int(input("Enter the number of tables: "))
     size_of_tables = int(input("Enter the size of each table: "))
     with open(path, "r") as file:
