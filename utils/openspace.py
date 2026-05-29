@@ -13,6 +13,12 @@ class OpenSpace :
         self.size_of_tables = size_of_tables
         for i in range(self.number_of_tables):
             self.tables.append(Table(self.size_of_tables, i))
+
+    def __str__(self):
+        result = "Open Space:\n"
+        for table in self.tables:
+            result += str(table) + "\n"
+        return result
     
     def organize(self, names):
         '''

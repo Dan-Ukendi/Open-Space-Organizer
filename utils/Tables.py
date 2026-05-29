@@ -10,6 +10,12 @@ class Seat:
         self.table = table
         self.occupant = None
         self.free = True
+
+    def __str__(self):
+        if self.free:
+            return "Free"
+        else:
+            return self.occupant
     
     def set_occupant(self, occupant):
         '''
@@ -39,6 +45,12 @@ class Table:
         self.seats = []
         for i in range(capacity):
             self.seats.append(Seat(self))   
+
+    def __str__(self):
+        result = f"Table {self.number}:\n"
+        for i, seat in enumerate(self.seats):
+            result += f"  Seat {i}: {seat}\n"
+        return result
     
     def has_free_spot(self, seat):
         '''
