@@ -1,4 +1,5 @@
 from utils.openspace import OpenSpace
+import os
     
 def main():
     '''
@@ -110,5 +111,3 @@ def main():
     space.display("./seating_arrangement.txt")
 
 main()
-
-        

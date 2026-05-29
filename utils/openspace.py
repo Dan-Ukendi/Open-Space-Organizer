@@ -92,14 +92,14 @@ class OpenSpace :
         '''
         Function that will make sure that nobody is alone in a table
         '''
-        i = 0
-        for i in range(len(self.tables)):
-            table = self.tables[i]
+        name  = self.tables[0].seats[0].occupant
+        table1 = self.tables[0]
+        for table in self.tables:
             if table.left_capacity() == self.size_of_tables - 1:
-                self.tables[i].move_occupant(self.tables[i-1].seats[0].occupant, self.tables[i])
+                table1.move_occupant(name, table)
                 return True
         return False
-    
+
     def switch_seats(self,name1,name2):
         '''
         Function that switch the seat of two occupant
